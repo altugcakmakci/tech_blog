@@ -6,12 +6,10 @@ const { Blogpost, Comment, User } = require('../../models');
 router.post('/', async (req, res) => {
   // create a new blogpost
   try {
-    console.log("Post");
-    console.log(req.body);
     const blogpostData = await Blogpost.create({
-        title: req.body.title,
-        content: req.body.content,
-        user_id: req.session.user_id
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.user_id
     });
     res.status(200).json(blogpostData);
   } catch (err) {
@@ -22,12 +20,12 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a blogpost by its `id` value
   try {
-    console.log(req.body);
     const blogpostData = await Blogpost.update({
-        title: req.body.title,
-        content: req.body.content,
-        user_id: req.body.user_id},
-      {where: {id : req.params.id}});
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.body.user_id
+    },
+      { where: { id: req.params.id } });
     res.status(200).json(blogpostData);
   } catch (err) {
     res.status(400).json(err);

@@ -1,19 +1,16 @@
 
 const newBlogHandler = async (event) => {
   event.preventDefault();
-  console.log("Dash enter")
 
   document.location.replace('/dashboard/new');
 };
 
 const blogFormHandler = async (event) => {
   event.preventDefault();
-  console.log("Blog enter")
 
   const title = document.querySelector('#post-title').value.trim();
   const content = document.querySelector('#post-content').value.trim();
 
-    console.log(title);
   if (title && content) {
     const response = await fetch('/api/blogpost', {
       method: 'POST',
@@ -34,7 +31,7 @@ const updateBlogHandler = async (event) => {
 
   const title = document.querySelector('#post-title').value.trim();
   const content = document.querySelector('#post-content').value.trim();
-    const id = document.querySelector('#post-title').getAttribute('data-userid');
+  const id = document.querySelector('#post-title').getAttribute('data-userid');
 
   if (title && content) {
     const response = await fetch(`/api/blogpost/${id}`, {
@@ -57,39 +54,39 @@ const deleteBlogHandler = async (event) => {
   const id = document.querySelector('#post-title').getAttribute('data-userid');
 
 
-    const response = await fetch(`/api/blogpost/${id}`, {
-      method: 'DELETE',
-      body: JSON.stringify({ id }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+  const response = await fetch(`/api/blogpost/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ id }),
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to delete blog.');
-    }
-  
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to delete blog.');
+  }
+
 };
 
 const nfp = document.querySelector('.new-post-form');
-if (nfp){
-    nfp.addEventListener('submit', blogFormHandler);
+if (nfp) {
+  nfp.addEventListener('submit', blogFormHandler);
 }
 
 const nbh = document.querySelector('#new-post');
-if (nbh){
-    nbh.addEventListener('click', newBlogHandler);
+if (nbh) {
+  nbh.addEventListener('click', newBlogHandler);
 
 }
 
 const eupd = document.querySelector('#edit-update');
-if (eupd){
-    eupd.addEventListener('click', updateBlogHandler);
+if (eupd) {
+  eupd.addEventListener('click', updateBlogHandler);
 }
 
 const edel = document.querySelector('#edit-delete');
-if (edel){
-    edel.addEventListener('click', deleteBlogHandler);
+if (edel) {
+  edel.addEventListener('click', deleteBlogHandler);
 }
 // document
 //   .querySelector('.new-post-form')
