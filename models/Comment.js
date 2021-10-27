@@ -29,11 +29,6 @@ Comment.init(
         key: 'id',
       },
     },
-    post_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: sequelize.NOW
-    },
   },
   {
     sequelize,

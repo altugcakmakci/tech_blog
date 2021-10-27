@@ -1,9 +1,9 @@
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
-  --quatrinary: #6c6b67;
-  --light: #e3e4e3;
+  --primary: darkgreen;
+  --secondary:green;
+  --tertiary: rgb(114, 173, 141);
+  --quatrinary: lightgreen;
+  --light: beige;
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -109,6 +109,7 @@ img {
 .card {
   margin: 20px;
   flex: 0 1 300px;
+  width: 95%;
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--light);
@@ -116,7 +117,7 @@ img {
 }
 
 .login-card {
-  margin: 0 0 20px 0;
+  margin: 20px 20px 0px 0px;
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
@@ -126,6 +127,16 @@ img {
   border-width: thick;
   background-color: #577a7c;
   color: var(--light);
+}
+
+.card h3 {
+  color: var(--light);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  background-color: var(--tertiary);
+  padding: 0.625rem;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
 .card header {
@@ -161,4 +172,24 @@ img {
   flex-flow: column wrap;
   align-content: flex-start;
   align-items: center;
+}
+
+.added {
+  text-align: right;
+  font-size: small;
+  color: var(--dark);
+}
+
+.dashboard {
+  min-height: 50vh;
+}
+
+.new-post-button {
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 5px var(--secondary);
+  border: 10px groove var(--light);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
