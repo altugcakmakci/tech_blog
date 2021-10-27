@@ -20,6 +20,8 @@ This application provides a CMS-style blog site, where developers can publish th
 
 - [Heroku CLI](#heroku)
 
+- [Screenshot](#screenshot)
+
 ## Installation
 
 To install neessary dependencies, run the following command
@@ -45,3 +47,6 @@ You can find more of my work at (https://github.com/altugcakmakci)
 
 ## Heroku
 https://caa-techblog.herokuapp.com/
+
+## Screenshot
+https://user-images.githubusercontent.com/90043589/139152637-0aa2a0cf-abb3-43d9-8ab8-29ef4b3baa3f.png
